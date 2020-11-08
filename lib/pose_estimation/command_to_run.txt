@@ -1,0 +1,22 @@
+pip2 install -r requirements.txt
+
+pip2 install --user -e .
+
+________________
+
+python2 generate_pose_labels.py ../superquadric_primitives ../../../Datasets/PoseChairInstance/inputs/ ../results
+
+python2 ./display_rotated_model.py ../superquadric_primitives/ ../../../Datasets/PoseChairInstance/ 0
+
+
+python2 generate_pose_labels.py ../superquadric_primitives/superquadric_primitives/chair1/ /hdd/zen/data/Reallite/chair_data/Instances/chair1/train/ ../results
+
+python2 generate_pose_labels.py ../superquadric_primitives/superquadric_primitives/chair1/ /hdd/zen/data/Reallite/chair_reallite1/chair_ycb/data/0000 /hdd/zen/data/Reallite/chair_reallite1/chair_ycb/data/0000/outputs
+
+_______________
+
+python2 ./train_pose_network.py ../../../Datasets/PoseChairInstance/ ../results/ --run_on_gpu --experiment_tag LMAO
+
+python2 ./forward_pass.py ../../../Datasets/PoseChairInstance/ ../superquadric_primitives/ ../results/FORWARD_PASS/ --weight_file ../trained_models/model_149 --save_prediction_as_mesh --run_on_gpu
+
+python2 ./forward_pass.py /hdd/zen/data/Reallite/chair_reallite1/chair_ycb/data/0000/ ../superquadric_primitives/ ../results/FORWARD_PASS/ --weight_file ../trained_models/model_10 --save_prediction_as_mesh --run_on_gpu

@@ -1,0 +1,5 @@
+python2 ./train_network.py ../../ShapeNetChairs/03001627 ../results/ --voxelizer_factory image --architecture resnet18 --use_sq --lr 1e-4 --epochs 800 --n_primitives 18 --train_with_bernoulli --dataset_type shapenet_v1 --use_chamfer --use_deformations --experiment_tag Y33T --run_on_gpu
+
+python2 ./forward_pass.py /hdd/zen/data/Reallite/ShapeNetCore.v2/03001627 ../results/ --model_tag "99d4e65625b32a1d151f08387c3363cb"  --weight_file ../config/chair_T26AK2FES_model_699 --voxelizer_factory image --architecture resnet18 --use_sq --n_primitives 18 --train_with_bernoulli --dataset_type shapenet_v2 --use_chamfer --use_deformations --run_on_gpu
+
+03001627

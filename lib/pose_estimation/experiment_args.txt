@@ -1,0 +1,1 @@
+./train_network.py ~/datasets/ShapeNetV1_augmented/SOME_CATEGORY ../results/ --voxelizer_factory image --architecture resnet18 --use_sq --lr 1e-4 --n_primitives 20 --train_with_bernoulli --dataset_type shapenet_v1 --use_chamfer --experiment_tag Y33T

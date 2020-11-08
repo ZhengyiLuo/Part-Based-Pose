@@ -1,0 +1,22 @@
+model_name: superquad_pose
+rot_repr: quat
+loss_name: L2
+dataset:
+  dataset_name: super_quat_dataset
+  data_root: /hdd/zen/data/Reallite/Rendering/chair_cls2
+  quat_dir: temp_data/03001627/99d4e65625b32a1d151f08387c3363cb
+  quat_threshold: 0.5
+  all_classes: False
+  train_test_split: 0.7
+  classes: 
+    - "99d4e65625b32a1d151f08387c3363cb"
+
+make_dense: True
+num_primitives: 11
+batch_size: 128
+train_epoch: 100
+save_model_interval: 10
+train_epoch_lr: 100
+lr: 0.001
+
+
